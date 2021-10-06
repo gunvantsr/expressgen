@@ -1,5 +1,5 @@
 {
-  "name": "expressgen",
+  "name": "@node/expressgen",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -14,7 +14,5 @@
 
   "dependencies": {
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.1.5",
-    "listr": "^0.14.3"
-  }
+    "inquirer": "^8.1.5"  }
 }
