@@ -1,9 +1,9 @@
 
 # Node-Expressgen 🚀
 
-At my job, whenever i was working on node express projects, i used to find myself copy-pasting the same directory and file strucutres over and over again. So, i created this simple node express boilerplate generator to ease the task. I acknowledge, there are so many better and adavanced tools for this task, but i wanted to build something custom while learning something new :)
+At my job, whenever I was working on node express projects, I used to find myself copy-pasting the same directory and file structures over and over again. So, I created this simple node express boilerplate generator to ease the task. I acknowledge, there are so many better and adavanced tools for this task, but I wanted to build something custom while learning something new :)
 
-PS: This project is still in beta,  please feel free to open a issue or pull request for any kind of feature suggestion, feedback, improvement.
+PS: This project is still in beta,  please feel free to open an issue or pull request for any kind of feature suggestion, feedback, improvement.
 ## Installation
 
 Install node-expressgen with npm globally
