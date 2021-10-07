@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const fse = require("fs-extra");
 const path = require('path');
+const { join } = require('path');
 
 const currentDir = process.cwd();
 
@@ -33,14 +34,15 @@ inquirer.prompt(QUESTIONS)
 
 
     let createContent = (projectName) => {
-      let packageJson = `./${projectName}/package.json`;
-      let pathName = path.join(__dirname,packageJson);
-      let packageObjet = fse.readJsonSync(packageJson);
-      packageObjet.name = projectName;
-      fs.writeFileSync(pathName, JSON.stringify(packageObjet));
-      
+      let projectPath = path.join(currentDir, projectName);
+      let packageJson = path.join(projectPath, 'package.json');
+      let packageObj = fse.readJsonSync(packageJson);
+      packageObj.name = projectName;
+      fs.writeFileSync(packageJson, JSON.stringify(packageObj));
       welcomeMsg(projectName);
+      
     }
+
 
 
 let welcomeMsg = (projectName) => {
