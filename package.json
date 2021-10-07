@@ -1,5 +1,5 @@
 {
-  "name": "@node/expressgen",
+  "name": "node-expressgen",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,9 +10,16 @@
 
   "bin": {
     "expressgen": "./index.js"
- },
+  },
+
+  "homepage": "https://github.com/GunvantSr/expressgen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GunvantSr/expressgen"
+  },
 
   "dependencies": {
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.1.5"  }
+    "inquirer": "^8.1.5"  
+  }
 }

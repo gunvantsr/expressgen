@@ -1,10 +1,9 @@
-#!/usr/bin/env/ node
+#!/usr/bin/env node
 const inquirer = require('inquirer');
 const fs = require('fs');
 const fse = require("fs-extra");
 const path = require('path');
 
-const CHOICES = fs.readdirSync(`${__dirname}/boilerplates`);
 const currentDir = process.cwd();
 
 const QUESTIONS = [
@@ -36,7 +35,7 @@ inquirer.prompt(QUESTIONS)
     let createContent = (projectName) => {
       let packageJson = `./${projectName}/package.json`;
       let pathName = path.join(__dirname,packageJson);
-      let packageObjet = fse.readJsonSync(pathName);
+      let packageObjet = fse.readJsonSync(packageJson);
       packageObjet.name = projectName;
       fs.writeFileSync(pathName, JSON.stringify(packageObjet));
       
