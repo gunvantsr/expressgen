@@ -10,7 +10,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: setup node 🟢
-      uses: actions/setup-node@1.4.2
+      uses: actions/setup-node@2
       with: # All of theses inputs are optional
         node-version: 12
         registery-url: https://registry.npmjs.org
