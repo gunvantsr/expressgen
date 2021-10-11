@@ -11,10 +11,10 @@ jobs:
       uses: actions/checkout@v2
     - name: setup node 🟢
       uses: actions/setup-node@v2
-      with: # All of theses inputs are optional
+      with: 
         node-version: 12
         registery-url: https://registry.npmjs.org
     - name: publish 🚀
       run: npm publish --access public 
-      env: # More info about the environment variables in the README
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+      env: 
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} 
