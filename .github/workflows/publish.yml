@@ -1,0 +1,20 @@
+name: "publish 🚀"
+on:
+  release:
+    types: [published]
+jobs:
+  release:
+    name: publish 🚀
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: setup node 🟢
+      uses: actions/setup-node@1.4.2
+      with: # All of theses inputs are optional
+        node-version: 12
+        registery-url: https://registry.npmjs.org
+    - name: publish 🚀
+      run: npm publish --access public 
+      env: # More info about the environment variables in the README
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
