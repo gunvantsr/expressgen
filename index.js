@@ -4,7 +4,6 @@ const fs = require('fs');
 const fse = require("fs-extra");
 const path = require('path');
 const { join } = require('path');
-
 const currentDir = process.cwd();
 
 const QUESTIONS = [

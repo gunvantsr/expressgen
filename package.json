@@ -1,6 +1,6 @@
 {
   "name": "node-expressgen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "author": "Gunvant Sarpate",
@@ -17,6 +17,15 @@
     "type": "git",
     "url": "https://github.com/GunvantSr/expressgen"
   },
+  "keywords": [
+		"terminal",
+		"console",
+		"cli",
+    "boilerplate",
+    "generator",
+    "node",
+    "express"
+	],
 
   "dependencies": {
     "fs-extra": "^10.0.0",
