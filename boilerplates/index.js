@@ -1,12 +1,23 @@
 const express = require("express");
 const app = express;
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const port = 5000  || process.env.port;
+
+const PORT = "5000"  || process.env.PORT;
+const DB_URI = "{IMPORT HERE}";
+
+mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then(()=>{
+        console.log("Database connected successfully!");
+    })
+    .catch((error)=>{
+        console.log(error);
+});
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 
 
 app.listen(port, ()=> {
