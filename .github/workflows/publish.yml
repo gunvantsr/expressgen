@@ -1,20 +1,18 @@
-name: "publish 🚀"
+name: Publishing to NPM 🚀
 on:
   release:
-    types: [published]
+    types: [created]
 jobs:
-  release:
-    name: publish 🚀
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: setup node 🟢
-      uses: actions/setup-node@v2
-      with: 
-        node-version: 12
-        registery-url: https://registry.npmjs.org
-    - name: publish 🚀
-      run: npm publish --access public 
-      env: 
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} 
+      - uses: actions/checkout@v2
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
