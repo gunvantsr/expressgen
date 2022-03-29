@@ -7,28 +7,25 @@
   "scripts": {
     "start": "node index.js"
   },
-
   "bin": {
     "expressgen": "./index.js"
   },
-
   "homepage": "https://github.com/GunvantSr/expressgen",
   "repository": {
     "type": "git",
     "url": "https://github.com/GunvantSr/expressgen"
   },
   "keywords": [
-		"terminal",
-		"console",
-		"cli",
+    "terminal",
+    "console",
+    "cli",
     "boilerplate",
     "generator",
     "node",
     "express"
-	],
-
+  ],
   "dependencies": {
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.1.5"  
+    "inquirer": "^8.1.5"
   }
 }
