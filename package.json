@@ -25,6 +25,7 @@
     "express"
   ],
   "dependencies": {
+    "chalk": "4.1.2",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.1.5"
   }
