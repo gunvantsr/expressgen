@@ -22,7 +22,6 @@ const QUESTIONS = [
 
 inquirer.prompt(QUESTIONS).then((answers) => {
   const projectName = answers['project-name'];
-  const modelName = answers['model-name'];
   const boilerplatePath = `${__dirname}/boilerplates`;
 
   fs.mkdirSync(`${currentDir}/${projectName}`);
