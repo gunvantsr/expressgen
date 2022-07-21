@@ -7,6 +7,8 @@ const { join } = require('path');
 const currentDir = process.cwd();
 const chalk = require('chalk');
 
+const CHOICES = fs.readdirSync(`${__dirname}/boilerplates`);
+
 const QUESTIONS = [
   {
     name: 'project-name',
@@ -18,13 +20,23 @@ const QUESTIONS = [
         return 'Project name may only include letters, numbers, underscores and hashes.';
     },
   },
+  {
+    name: 'project-type',
+    type: 'list',
+    message: 'Project Type:',
+    choices: CHOICES,
+  },
 ];
 
 inquirer.prompt(QUESTIONS).then((answers) => {
   const projectName = answers['project-name'];
-  const modelName = answers['model-name'];
-  const boilerplatePath = `${__dirname}/boilerplates`;
-
+  const projectType = answers['project-type'];
+  let boilerplatePath = `${__dirname}/boilerplates/`;
+  if (projectType == 'javascript') {
+    boilerplatePath = `${__dirname}/boilerplates/javascript`;
+  } else if (projectType == 'typescript') {
+    boilerplatePath = `${__dirname}/boilerplates/typescript`;
+  }
   fs.mkdirSync(`${currentDir}/${projectName}`);
   fse.copySync(boilerplatePath, projectName);
   createContent(projectName);
