@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 const PORT = '5000' || process.env.PORT;
-const DB_URI = '{IMPORT HERE}';
+const { DB_URI } = require('./config/config');
 
 mongoose
   .connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
