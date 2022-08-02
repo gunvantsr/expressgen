@@ -31,12 +31,8 @@ const QUESTIONS = [
 inquirer.prompt(QUESTIONS).then((answers) => {
   const projectName = answers['project-name'];
   const projectType = answers['project-type'];
-  let boilerplatePath = `${__dirname}/boilerplates/`;
-  if (projectType == 'javascript') {
-    boilerplatePath = `${__dirname}/boilerplates/javascript`;
-  } else if (projectType == 'typescript') {
-    boilerplatePath = `${__dirname}/boilerplates/typescript`;
-  }
+  let boilerplatePath = `${__dirname}/boilerplates/${projectType}`;
+
   fs.mkdirSync(`${currentDir}/${projectName}`);
   fse.copySync(boilerplatePath, projectName);
   createContent(projectName);
