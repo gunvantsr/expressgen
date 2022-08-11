@@ -15,6 +15,8 @@ Install node-expressgen with npm globally
 
 ```bash
   npm install node-expressgen -g
+  or
+  yarn add node-expressgen -g
 ```
 
 ## Usage/Examples
