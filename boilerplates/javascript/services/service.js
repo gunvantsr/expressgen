@@ -1,31 +1,37 @@
-exports.create = async ()=> {
-    try {
-        return { success: true, body: "{}"};
-    } catch (error) {
-        return { success: false, error: error.message};
-    }
-}
+const Model = require('../models/model');
 
-exports.read = async ()=> {
-    try {
-        return { success: true, body: "{}"};
-    } catch (error) {
-        return { success: false, error: error.message};
-    }
-}
+exports.create = async () => {
+  try {
+    const results = await Model.create();
+    return { success: true, body: results };
+  } catch (error) {
+    return { success: false, error: error };
+  }
+};
 
-exports.update = async ()=> {
-    try {
-        return { success: true, body: "{}"};
-    } catch (error) {
-        return { success: false, error: error.message};
-    }
-}
+exports.read = async () => {
+  try {
+    const results = await Model.find();
+    return { success: true, body: results };
+  } catch (error) {
+    return { success: false, error: error };
+  }
+};
 
-exports.delete = async ()=> {
-    try {
-        return { success: true, body: "{}"};
-    } catch (error) {
-        return { success: false, error: error.message};
-    }
-}
+exports.update = async () => {
+  try {
+    const results = await Model.update();
+    return { success: true, body: results };
+  } catch (error) {
+    return { success: false, error: error };
+  }
+};
+
+exports.delete = async () => {
+  try {
+    const results = await Model.delete();
+    return { success: true, body: results };
+  } catch (error) {
+    return { success: false, error: error };
+  }
+};
