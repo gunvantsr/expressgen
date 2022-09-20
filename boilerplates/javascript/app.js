@@ -1,5 +1,6 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
+const logger = require("./logger/index");
 
 const app = express();
 
@@ -11,10 +12,10 @@ app.use(
   })
 );
 
-app.use('/health', (req, res) => {
+app.use("/health", (req, res) => {
   const healthCheck = {
     uptime: process.uptime(),
-    message: 'OK',
+    message: "OK",
     timestamp: Date.now(),
   };
   try {
@@ -25,7 +26,7 @@ app.use('/health', (req, res) => {
   }
 });
 
-const PORT = '5000' || process.env.PORT;
+const PORT = "5000" || process.env.PORT;
 module.exports = {
   app,
   PORT,
